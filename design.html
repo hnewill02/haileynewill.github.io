@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphic Design - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+  <nav>
+    <div class="nav-container">
+      <img src="media/personalLogo_Cream.png" alt="Hailey Newill Personal Logo" class="logo">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  <section class="page-hero">
+    <h1>Graphic Design</h1>
+    <p>My branding, posters, and visual design projects.</p>
+  </section>
+
+  <section class="projects">
+    <div class="project-card" data-project="1">
+      <img src="media/design/bigBlueEnergy.png" alt="Big Blue Energy Brand Graphics Project">
+      <h3>Big Blue Energy Brand Graphics</h3>
+      <p>Short description of this project.</p>
+    </div>
+    <div class="project-card" data-project="2">
+      <img src="media/design/AAT_Logo.png" alt="All About Time Client Project">
+      <h3>All About Time Client Project</h3>
+      <p>Short description of this project.</p>
+    </div>
+    <div class="project-card" data-project="3">
+      <img src="media/design/design.png" alt="Dissonance Logo Client Project">
+      <h3>Dissonance Logo Client Project</h3>
+      <p>Short description of this project.</p>
+    </div>
+    <div class="project-card" data-project="4">
+      <img src="media/design/KirklandTicketInfo.png" alt="Kirkland Social Media Project">
+      <h3>Kirkland Social Media Project</h3>
+      <p>Short description of this project.</p>
+    </div>
+    <div class="project-card" data-project="5">
+      <img src="media/design/NickOffermanPoster.png" alt="Nick Offerman Event Project">
+      <h3>Nick Offerman Event Project</h3>
+      <p>Short description of this project.</p>
+    </div>
+    </div>
+    <div class="project-card" data-project="6">
+      <img src="media/design/SrPoster_Jessen.png" alt="Senior Track Poster Design">
+      <h3>Senior Track Poster Design</h3>
+      <p>Short description of this project.</p>
+    </div>
+    <div class="project-card" data-project="7">
+      <img src="media/design/productphoto1.jpg" alt="Product Design Project">
+      <h3>Product Design Project</h3>
+      <p>Short description of this project.</p>
+    </div>
+    <div class="project-card" data-project="8">
+      <img src="media/design/UnityMap_Layout.png" alt="Unity Map Layout Project">
+      <h3>Unity Map Layout Project</h3>
+      <p>Short description of this project.</p>
+    </div>
+    <div class="project-card" data-project="9">
+      <img src="media/design/DHOP_Back.png" alt="DHOP T-Shirt Design Project">
+      <h3>DHOP T-Shirt Design Project</h3>
+      <p>Short description of this project.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hailey Newill. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+         <span class="close">&times;</span>
+
+            <div class="carousel">
+              <button class="prev">&#10094;</button>
+              <img id="carouselImage" src="" alt="Project image">
+              <button class="next">&#10095;</button>
+            </div>
+
+            <div class="modal-text">
+              <h2 id="modalTitle"></h2>
+              <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("projectModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+        const carouselImage = document.getElementById("carouselImage");
+        const closeBtn = document.querySelector(".close");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+
+        // Project data
+        const projects = {
+            1: {
+                  title: "Big Blue Energy Brand Graphics Project",
+                  description: "Description",
+                  images: ["media/design/Post_TShirtDay1.png", "media/design/Post_TShirtDay3.png", "media/design/Post_TShirtDay4.png", "media/design/Post_TShirtDay5.png", "media/design/HomecomingKickoff.png", "media/design/Post_FootballPopup.png", "media/design/Post_Homecoming2.png", "media/design/Post_HappyHalloween.png"]
+            },
+            2: {
+                title: "All About Time Client Project",
+                description: "Brand identity design for a small jewelry company, including logo and banner.",
+                images: ["media/project2-1.png", "media/project2-2.png"]
+            },
+            3: {
+                title: "Dissonance Logo Client Project",
+                description: "Logo designs directly worked through with a leadership board of the student organization.",
+                images: ["media/design/dissonanceLogo_V2.png","media/design/dissonanceLogo.png","media/design/dissonanceLogo_V1.png","media/design/dissonanceAcappella_V4.png"]
+            },
+            4: {
+                title: "Kirkland Social Media Project",
+                description: "Description.",
+                images: ["media/design/KirklandTicketInfo.png","media/design/AirmenofNote.png","media/design/paxduo1.png","media/design/paxduo2.png"]
+            },
+            5: {
+                title: "Nick Offerman Event Project",
+                description: "Description.",
+                images: ["media/design/NickOffermanPoster.png","media/design/VIP_GoodheartEvent.png"]
+            },
+            6: {
+                title: "Senior Track Poster Design",
+                description: "Description.",
+                images: ["media/design/SrPoster_Jessen.png","media/design/SrPoster_KatieRisner.png","media/design/SrPoster_ItzelGarcia.png","media/design/SrPoster_JakeShumaker.png","media/design/SrPoster_Griffin.png","media/design/SrPoster_Boren.png"]
+            },
+            7: {
+                title: "Product Design Project",
+                description: "Description.",
+                images: ["media/project3-1.png"]
+            },
+            8: {
+                title: "Unity Map Layout Client Project",
+                description: "Description.",
+                images: ["media/design/UnityMap_Layout.png"]
+            },
+            9: {
+                title: "DHOP T-Shirt Design Project",
+                description: "Description.",
+                images: ["media/project3-1.png"]
+            }
+        };
+
+        let currentProject = null;
+        let currentImageIndex = 0;
+
+        document.querySelectorAll(".project-card").forEach(card => {
+            card.addEventListener("click", () => {
+                const id = card.getAttribute("data-project");
+                currentProject = projects[id];
+                currentImageIndex = 0;
+                openModal();
+            });
+        });
+
+        function openModal() {
+            modalTitle.textContent = currentProject.title;
+            modalDescription.textContent = currentProject.description;
+            carouselImage.src = currentProject.images[currentImageIndex];
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % currentProject.images.length;
+            carouselImage.src = currentProject.images[currentImageIndex];
+        }
+
+        function showPrevImage() {      
+            currentImageIndex = (currentImageIndex - 1 + currentProject.images.length) % currentProject.images.length;
+            carouselImage.src = currentProject.images[currentImageIndex];
+        }
+
+        closeBtn.onclick = closeModal;
+        nextBtn.onclick = showNextImage;
+        prevBtn.onclick = showPrevImage;
+
+        window.onclick = function(e) {
+            if (e.target === modal) closeModal();
+        };
+    </script>
+
+</body>
+</html>

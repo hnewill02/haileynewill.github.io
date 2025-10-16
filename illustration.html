@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Illustration - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+  <nav>
+    <div class="nav-container">
+      <img src="media/personalLogo_Cream.png" alt="Hailey Newill Personal Logo" class="logo">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  <section class="page-hero">
+    <h1>Digital Illustration</h1>
+    <p>My character art, concept work, and illustrations.</p>
+  </section>
+
+  <section class="projects">
+    <div class="project-card" data-project="1">
+      <img src="media/illustration/illustration1.jpg" alt="Illustration Project 1">
+      <h3>Illustration Project 1</h3>
+      <p>Short description about this artwork.</p>
+    </div>
+    <div class="project-card" data-project="2">
+      <img src="media/illustration/RaptorStampsIllustration.jpg" alt="Raptor Stamps Illustration">
+      <h3>Raptor Stamps Illustration</h3>
+      <p>Short description about this artwork.</p>
+    </div>
+    <div class="project-card">
+      <img src="media/illustration/illustration3.jpg" alt="Illustration Project 3">
+      <h3>Illustration Project 3</h3>
+      <p>Short description about this artwork.</p>
+    </div>
+    <div class="project-card">
+      <img src="media/illustration/illustration4.jpg" alt="Illustration Project 4">
+      <h3>Illustration Project 4</h3>
+      <p>Short description about this artwork.</p>
+    </div>
+    <div class="project-card">
+      <img src="media/illustration/illustration5.jpg" alt="Illustration Project 5">
+      <h3>Illustration Project 5</h3>
+      <p>Short description about this artwork.</p>
+    </div>
+    <div class="project-card">
+      <img src="media/illustration/illustration6.jpg" alt="Illustration Project 6">
+      <h3>Illustration Project 6</h3>
+      <p>Short description about this artwork.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hailey Newill. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+         <span class="close">&times;</span>
+
+            <div class="carousel">
+              <button class="prev">&#10094;</button>
+              <img id="carouselImage" src="" alt="Project image">
+              <button class="next">&#10095;</button>
+            </div>
+
+            <div class="modal-text">
+              <h2 id="modalTitle"></h2>
+              <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("projectModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+        const carouselImage = document.getElementById("carouselImage");
+        const closeBtn = document.querySelector(".close");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+
+        // Project data
+        const projects = {
+            1: {
+                  title: "Illustration Project 1",
+                  description: "Description",
+                  images: ["media/illustration/image.png"]
+            },
+            2: {
+                title: "Raptor Stamps Illustration",
+                description: "Description.",
+                images: ["media/illustration/RaptorStampsIllustration.jpg"]
+            },
+            3: {
+                title: "Illustration Project 3",
+                description: "Logo designs directly worked through with a leadership board of the student organization.",
+                images: ["media/illustration/image.png"]
+            },
+            4: {
+                title: "Illustration Project 4",
+                description: "Description.",
+                images: ["media/illustration/image.png"]
+            },
+            5: {
+                title: "Illustration Project 5",
+                description: "Description.",
+                images: ["media/illustration/image.png"]
+            },
+            6: {
+                title: "Illustration Project 6",
+                description: "Description.",
+                images: ["media/illustration/image.png"]
+            }
+        };
+
+        let currentProject = null;
+        let currentImageIndex = 0;
+
+        document.querySelectorAll(".project-card").forEach(card => {
+            card.addEventListener("click", () => {
+                const id = card.getAttribute("data-project");
+                currentProject = projects[id];
+                currentImageIndex = 0;
+                openModal();
+            });
+        });
+
+        function openModal() {
+            modalTitle.textContent = currentProject.title;
+            modalDescription.textContent = currentProject.description;
+            carouselImage.src = currentProject.images[currentImageIndex];
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % currentProject.images.length;
+            carouselImage.src = currentProject.images[currentImageIndex];
+        }
+
+        function showPrevImage() {      
+            currentImageIndex = (currentImageIndex - 1 + currentProject.images.length) % currentProject.images.length;
+            carouselImage.src = currentProject.images[currentImageIndex];
+        }
+
+        closeBtn.onclick = closeModal;
+        nextBtn.onclick = showNextImage;
+        prevBtn.onclick = showPrevImage;
+
+        window.onclick = function(e) {
+            if (e.target === modal) closeModal();
+        };
+    </script>
+
+</body>
+</html>
