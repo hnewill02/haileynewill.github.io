@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+/* Brand palette */
+:root{
+  --teal: #2e6f7d;
+  --black: #000000;
+  --cream: #f7f6f2;
+  --forest: #385b4f;
+  --gold: #ccb068;
+  --muted: rgba(16,16,16,0.04);
+}
+
 /* Main Page */
 .cover {
   height: 100vh;
@@ -14,8 +24,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top, #2e6f7d, #000000);
-  color: #f7f6f2;
+  padding: 36px;
+  background: linear-gradient(180deg, var(--cream) 0%, #f3efe6 100%);
+}
+
+.cover::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(ellipse at center, rgba(255,255,252,0.0) 0%, rgba(0,0,0,0.06) 100%);
+  pointer-events: none;
+  z-index: 5;
 }
 
 .cover-content {
@@ -26,12 +45,12 @@
 
 .big-title {
   font-family: 'Cinzel Decorative', serif;
-  font-size: 4.6rem;
-  color: #f9f7f3;
-  text-shadow:
-    0 0 10px rgba(96,183,203,0.4),
-    0 0 25px rgba(220,210,180,0.25);
-  animation: fadeInTitle 2.5s ease-out forwards;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  color: var(--teal);
+  letter-spacing: 4px;
+  margin-bottom: 0.25rem;
+  text-shadow:0 0 10px rgba(96,183,203,0.4), 0 0 25px rgba(220,210,180,0.25);
+  animation: fadeInTitle 1.8s ease-out forwards;
   opacity: 0;
 }
 
@@ -42,11 +61,10 @@
 
 .tagline {
   font-size: 1.4rem;
-  color: rgba(255,255,255,0.85);
-  letter-spacing: 4px;
+  color: rgba(38,48,40,0.9);
+  letter-spacing: 2px;
   opacity: 0;
-  text-shadow: 0 0 10px rgba(96,183,203,0.35);
-  animation: fadeInSubtitle 3s ease-out forwards;
+  animation: fadeInSubtitle 2.4s ease-out forwards;
 }
 
 @keyframes fadeInSubtitle {
@@ -57,16 +75,16 @@
 .enter-btn {
   display: inline-block;
   margin-top: 2rem;
-  padding: 14px 35px;
-  border-radius: 40px;
+  padding: 12px 32px;
+  border-radius: 32px;
   border: 2px solid rgba(96,183,203,0.5);
-  color: #ffffff;
+  color: var(--cream);
   text-decoration: none;
   letter-spacing: 2px;
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(4px);
   transition: all 0.4s ease;
-  animation: fadeInButton 3.4s ease-out forwards;
+  animation: fadeInButton 2.8s ease-out forwards 0.5s;
   opacity: 0;
   box-shadow: 0 0 12px rgba(96,183,203,0.25);
   z-index: 11;
@@ -80,7 +98,7 @@
 }
 
 @keyframes fadeInButton {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -88,13 +106,13 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 40%, rgba(96,183,203,0.55), transparent 70%),
-    radial-gradient(circle at 80% 70%, rgba(220,210,180,0.35), transparent 70%),
-    radial-gradient(circle at 50% 100%, rgba(255,245,230,0.35), transparent 80%);
-  filter: blur(100px);
-  animation: fogMove 18s ease-in-out infinite alternate;
-  z-index: 0;
-  opacity: 0.9;
+    radial-gradient(circle at 20% 35%, rgba(46,111,125,0.18), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(204,176,104,0.12), transparent 50%);
+  filter: blur(60px);
+  animation: fogMove 20s ease-in-out infinite alternate;
+  z-index: 6;
+  opacity: 0.95;
+  pointer-events: none;
 }
 
 @keyframes fogMove {
@@ -103,11 +121,11 @@
 }
 
 .particles {
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
-  overflow: hidden;
-  z-index: 2;
+  z-index: 10;
+  mix-blend-mode: screen;
 }
 
 .particles::before,
@@ -116,90 +134,68 @@
   position: absolute;
   inset: 0;
   background-repeat: repeat;
+  pointer-events: none;
   opacity: 0.5;
   animation: drift 18s linear infinite;
+  z-index: 10;
 }
 
 .particles::before {
-  background-image: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.7) 0px,
-    rgba(255, 255, 255, 0) 8px
-  );
+  background-image: radial-gradient(circle,rgba(255, 255, 255, 0.85) 0px,rgba(255, 255, 255, 0) 6px);
   background-size: 150px 150px;
-  filter: blur(1.5px);
+  filter: blur(1.1px);
   animation-duration: 22s;
   opacity: 0.4;
 }
 
 .particles::after {
   background-image:
-    radial-gradient(circle, rgba(96, 183, 203, 0.8) 0px, rgba(96, 183, 203, 0) 12px),
-    radial-gradient(circle, rgba(230, 223, 205, 0.7) 0px, rgba(230, 223, 205, 0) 10px),
-    radial-gradient(circle, rgba(150, 200, 180, 0.7) 0px, rgba(150, 200, 180, 0) 14px);
-  background-size: 200px 200px, 250px 250px, 300px 300px;
+    radial-gradient(circle, rgba(46, 111, 125, 0.9) 0px, rgba(46, 111, 125, 0) 10px),
+    radial-gradient(circle, rgba(204, 176, 104, 0.9) 0px, rgba(204, 176, 104, 0) 12px),
+  background-size: 200px 200px, 260px 260px;
   filter: blur(2px);
   opacity: 0.35;
   animation-duration: 30s;
 }
 
 @keyframes drift {
-  0% {
-    transform: translate3d(-2%, -2%, 0);
-  }
-  50% {
-    transform: translate3d(2%, 4%, 0);
-  }
-  100% {
-    transform: translate3d(-2%, -2%, 0);
-  }
+  0% {transform: translate3d(-1%, -1%, 0);}
+  50% {transform: translate3d(1.5%, 2.5%, 0);}
+  100% {transform: translate3d(-1%, -1%, 0);}
 }
 
 .leaves {
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  z-index: 2;
+  z-index: 30;
 }
 
 .leaf {
   position: absolute;
-  top: -5vh;
-  width: 22px;
-  height: 22px;
-
-  background: radial-gradient(circle at 30% 30%, #385b4f, #60cb8e 70%);
-  border-radius: 40% 60% 40% 60%;
-
-  animation: leafFall 12s linear infinite,
-             leafSpin 6s ease-in-out infinite alternate;
-  opacity: 0.7;
-  filter: blur(0.3px);
+  top: -6vh;
+  width: 20px;
+  height: 26px;
+  background: linear-gradient(145deg, rgba(168,240,198,0.95) 0%, rgba(46,111,125,0.9) 70%);
+  border-radius: 30% 60% 30% 60% / 40% 50% 60% 30%;
+  box-shadow: 0 6px 18px rgba(46,111,125,0.16);
+  transform-origin: center;
+  animation: leafFall linear infinite;
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 6px rgba(46,111,125,0.12));
 }
 
 @keyframes leafFall {
-  0% {
-    transform: translateY(-10vh) translateX(0);
-  }
-  50% {
-    transform: translateY(55vh) translateX(10px);
-  }
-  100% {
-    transform: translateY(110vh) translateX(-15px);
-  }
+  0% {transform: translateY(-10vh) translateX(0);}
+  50% {transform: translateY(55vh) translateX(10px);}
+  100% {transform: translateY(120vh) translateX(-15px);}
 }
 
 @keyframes leafSpin {
-  0% {
-    transform: rotate(-20deg) scale(1);
-  }
-  50% {
-    transform: rotate(20deg) scale(1.05);
-  }
-  100% {
-    transform: rotate(-15deg) scale(0.95);
-  }
+  0% {transform: rotate(-20deg) scale(1);}
+  50% {transform: rotate(20deg) scale(1.05);}
+  100% {transform: rotate(-15deg) scale(0.95);}
 }
 
 
@@ -208,22 +204,25 @@
 
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f7f6f2;
-  color: #333;
+  background: linear-gradient(180deg, var(--cream) 0%, #f4efe6 100%);
+  color: #222;
+  font-family: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x: hidden;
 }
 
 header {
-  background: #000000;
-  color: #f7f6f2;
-  padding: 1rem 2rem;
+  background: transparent;
+  padding: 20px 36px;
+  position: relative;
+  z-index: 200;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap:18px;
   margin: 0;
 }
 
@@ -234,7 +233,11 @@ nav a {
 }
 
 nav a:hover {
-    color: #60b7cb;
+  color: #60b7cb;
+  text-decoration:none;
+  padding:6px 8px;
+  border-radius:6px;
+  font-weight:600;
 }
 
 nav a.active {
@@ -256,14 +259,18 @@ nav a.active::after {
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 20px;
+  max-width:1200px;
+  margin: 0 auto;
 }
 
 .logo {
-    height: 30px;
-    width: auto
+  height: 30px;
+  width: auto;
+  display: block;
 }
 
 h1 {
