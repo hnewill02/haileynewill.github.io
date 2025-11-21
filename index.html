@@ -8,6 +8,16 @@
   <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
 </head>
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      document.querySelectorAll(".shape").forEach((shape, idx) => {
+        const speed = (idx + 1) * 0.02;
+        const x = (window.innerWidth - e.pageX * speed) / 90;
+        const y = (window.innerHeight - e.pageY * speed) / 90;
+        shape.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+  </script>
 <body>
   <header>
   <nav>
@@ -46,16 +56,5 @@
     <p>&copy; 2025 Hailey Newill. All Rights Reserved.</p>
   </footer>
 </body>
-
-<script>
-document.addEventListener("mousemove", (e) => {
-  document.querySelectorAll(".shape").forEach((shape, idx) => {
-    const speed = (idx + 1) * 0.02;
-    const x = (window.innerWidth - e.pageX * speed) / 90;
-    const y = (window.innerHeight - e.pageY * speed) / 90;
-    shape.style.transform = `translate(${x}px, ${y}px)`;
-  });
-});
-</script>
   
 </html>
