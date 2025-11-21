@@ -169,9 +169,9 @@
   width: 22px;
   height: 22px;
 
-  background: radial-gradient(circle at 30% 30%, #a8f0c6, #60b7cb 70%);
+  background: radial-gradient(circle at 30% 30%, #092d16, #60cb8e 70%);
   border-radius: 40% 60% 40% 60%;
-  box-shadow: 0 0 8px rgba(96, 183, 203, 0.8);
+  box-shadow: 0 0 8px #1c5c43;
 
   animation: leafFall 12s linear infinite,
              leafSpin 6s ease-in-out infinite alternate;
