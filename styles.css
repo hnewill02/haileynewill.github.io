@@ -222,18 +222,19 @@ header {
 nav ul {
   display: flex;
   list-style: none;
-  gap: 18px;
+  gap: 2rem;
   margin: 0;
 }
 
 nav a {
-  color: #ffffff;
+  color: var(--cream);
   text-decoration: none;
+  letter-spacing: 1px;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #60b7cb;
+  color: var(--gold);
   text-decoration: none;
   padding: 6px 8px;
   border-radius: 6px;
@@ -241,7 +242,7 @@ nav a:hover {
 }
 
 nav a.active {
-  color: #60b7cb;
+  color: var(--gold);
   position: relative;
   text-decoration: none;
 }
@@ -262,8 +263,8 @@ nav a.active::after {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap: 20px;
   max-width:1200px;
+  padding: 12px 24px;
   margin: 0 auto;
 }
 
