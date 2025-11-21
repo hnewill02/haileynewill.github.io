@@ -78,7 +78,7 @@
   padding: 12px 32px;
   border-radius: 32px;
   border: 2px solid rgba(96,183,203,0.5);
-  color: var(--cream);
+  color: var(--teal);
   text-decoration: none;
   letter-spacing: 2px;
   background: rgba(255,255,255,0.06);
@@ -124,7 +124,7 @@
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 10;
+  z-index: 8;
   mix-blend-mode: screen;
 }
 
@@ -135,33 +135,33 @@
   inset: 0;
   background-repeat: repeat;
   pointer-events: none;
-  opacity: 0.5;
-  animation: drift 18s linear infinite;
-  z-index: 10;
+  opacity: 0.55;
+  animation: drift 22s linear infinite;
 }
 
 .particles::before {
-  background-image: radial-gradient(circle,rgba(255, 255, 255, 0.85) 0px,rgba(255, 255, 255, 0) 6px);
+  background-image: radial-gradient(circle,rgba(204, 176, 104, 0.85) 0px,rgba(204, 176, 104, 0) 6px);
   background-size: 150px 150px;
   filter: blur(1.1px);
-  animation-duration: 22s;
+  animation-duration: 26s;
   opacity: 0.4;
 }
 
 .particles::after {
   background-image:
-    radial-gradient(circle, rgba(46, 111, 125, 0.9) 0px, rgba(46, 111, 125, 0) 10px),
-    radial-gradient(circle, rgba(204, 176, 104, 0.9) 0px, rgba(204, 176, 104, 0) 12px),
-  background-size: 200px 200px, 260px 260px;
+    radial-gradient(circle, rgba(204,176,104,0.9) 0px, rgba(204,176,104,0) 12px),
+    radial-gradient(circle, rgba(56,91,79,0.65) 0px, rgba(56,91,79,0) 14px),
+    radial-gradient(circle, rgba(46,111,125,0.55) 0px, rgba(46,111,125,0) 16px);
+  background-size: 200px 200px, 260px 260px, 300px 300px;
   filter: blur(2px);
   opacity: 0.35;
   animation-duration: 30s;
 }
 
 @keyframes drift {
-  0% {transform: translate3d(-1%, -1%, 0);}
-  50% {transform: translate3d(1.5%, 2.5%, 0);}
-  100% {transform: translate3d(-1%, -1%, 0);}
+  0% {transform: translate3d(-2%, -2%, 0);}
+  50% {transform: translate3d(3%, 3%, 0);}
+  100% {transform: translate3d(-2%, -2%, 0);}
 }
 
 .leaves {
@@ -222,22 +222,22 @@ header {
 nav ul {
   display: flex;
   list-style: none;
-  gap:18px;
+  gap: 18px;
   margin: 0;
 }
 
 nav a {
-  color: #f7f6f2;
+  color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #60b7cb;
-  text-decoration:none;
-  padding:6px 8px;
-  border-radius:6px;
-  font-weight:600;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-weight: 600;
 }
 
 nav a.active {
