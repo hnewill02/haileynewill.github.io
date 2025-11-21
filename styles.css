@@ -95,6 +95,42 @@
   transform: translateY(-3px);
 }
 
+.gradient-orbs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.gradient-orbs::before,
+.gradient-orbs::after {
+  content: "";
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.55;
+  animation: float-blobs 18s infinite alternate ease-in-out;
+}
+
+.gradient-orbs::before {
+  background: #60b7cb;
+  top: -10%;
+  left: -20%;
+}
+
+.gradient-orbs::after {
+  background: #e7d9c8;
+  bottom: -10%;
+  right: -15%;
+}
+
+@keyframes float-blobs {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -40px) scale(1.15); }
+}
+
 
 
 
