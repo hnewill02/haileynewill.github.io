@@ -14,8 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top, #2e6f7d, #000000);
-  color: #f7f6f2;
+  background: radial-gradient(circle at top, #f7f6f2, #000000);
+  color: #2e6f7d;
 }
 
 .cover-content {
