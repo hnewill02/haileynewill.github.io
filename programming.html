@@ -32,17 +32,101 @@
     <div class="project-card">
       <img src="code1.jpg" alt="Programming Project 1">
       <h3>Space Invaders Mini-Game</h3>
-      <p>Short description of this coding project.</p>
+      <p>Java programmed mini-game project.</p>
     </div>
     <div class="project-card">
       <img src="code2.jpg" alt="Programming Project 2">
-      <h3>Programming Project 2</h3>
-      <p>Short description of this coding project.</p>
+      <h3>Personal Wellness Dashboard</h3>
+      <p>Web and database design project.</p>
     </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Hailey Newill. All Rights Reserved.</p>
   </footer>
+
+  <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+         <span class="close">&times;</span>
+
+            <div class="carousel">
+              <button class="prev">&#10094;</button>
+              <img id="carouselImage" src="" alt="Project image">
+              <button class="next">&#10095;</button>
+            </div>
+
+            <div class="modal-text">
+              <h2 id="modalTitle"></h2>
+              <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("projectModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+        const carouselImage = document.getElementById("carouselImage");
+        const closeBtn = document.querySelector(".close");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+
+        // Project data
+        const projects = {
+            1: {
+                  title: "Space Invaders Mini-Game",
+                  description: "This simple animated video game I had deemed my own version of Space Invaders was created for my IS 221: Programming Fundamentals final and also my Honors Seminar Project over video games and how they help cognitive and physical function and development. Programmed in Java, this game has many different layers and is my first programmed video game project.",
+                  images: ["image.png"]
+            },
+            2: {
+                title: "Personal Wellness Dashboard",
+                description: "This Dashboard was created in using Supabase as the database software and Appsmith as the UI software. It was created from a proposed personal project in MIS 425: Low-Code Development course.",
+                images: ["RaptorStampsIllustration.jpg"]
+            }
+        };
+
+        let currentProject = null;
+        let currentImageIndex = 0;
+
+        document.querySelectorAll(".project-card").forEach(card => {
+            card.addEventListener("click", () => {
+                const id = card.getAttribute("data-project");
+                currentProject = projects[id];
+                currentImageIndex = 0;
+                openModal();
+            });
+        });
+
+        function openModal() {
+            modalTitle.textContent = currentProject.title;
+            modalDescription.textContent = currentProject.description;
+            carouselImage.src = currentProject.images[currentImageIndex];
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % currentProject.images.length;
+            carouselImage.src = currentProject.images[currentImageIndex];
+        }
+
+        function showPrevImage() {      
+            currentImageIndex = (currentImageIndex - 1 + currentProject.images.length) % currentProject.images.length;
+            carouselImage.src = currentProject.images[currentImageIndex];
+        }
+
+        closeBtn.onclick = closeModal;
+        nextBtn.onclick = showNextImage;
+        prevBtn.onclick = showPrevImage;
+
+        window.onclick = function(e) {
+            if (e.target === modal) closeModal();
+        };
+    </script>
+
 </body>
 </html>
