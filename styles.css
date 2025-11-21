@@ -134,9 +134,9 @@
 
 .particles::after {
   background-image:
-    radial-gradient(circle, rgba(96, 183, 203, 0.8) 0px, rgba(96, 183, 203, 0) 12px),
-    radial-gradient(circle, rgba(230, 223, 205, 0.7) 0px, rgba(230, 223, 205, 0) 10px),
-    radial-gradient(circle, rgba(150, 200, 180, 0.7) 0px, rgba(150, 200, 180, 0) 14px);
+    radial-gradient(circle, #ccb068 0px, #ccb068 12px),
+    radial-gradient(circle, #e6dfcd 0px, #e6dfcd 10px),
+    radial-gradient(circle, #f7f6f2 0px, #f7f6f2 14px);
   background-size: 200px 200px, 250px 250px, 300px 300px;
   filter: blur(2px);
   opacity: 0.35;
@@ -169,7 +169,7 @@
   width: 22px;
   height: 22px;
 
-  background: radial-gradient(circle at 30% 30%, #092d16, #60cb8e 70%);
+  background: radial-gradient(circle at 30% 30%, #385b4f, #60cb8e 70%);
   border-radius: 40% 60% 40% 60%;
   box-shadow: 0 0 8px #1c5c43;
 
