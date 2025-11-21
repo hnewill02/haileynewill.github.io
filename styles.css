@@ -27,23 +27,28 @@
 .big-title {
   font-family: 'Cinzel Decorative', serif;
   font-size: 4rem;
-  letter-spacing: 4px;
-  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255,255,255,0.4);
+  animation: fadeInTitle 2.5s ease-out forwards;
   opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1.4s ease-out forwards;
-  text-shadow: 0 0 20px rgba(96, 183, 203, 0.8);
+}
+
+@keyframes fadeInTitle {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .tagline {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1.4s ease-out forwards 0.4s;
-  letter-spacing: 2px;
-  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 10px;
+  animation: fadeInSubtitle 3s ease-out forwards;
+}
+
+@keyframes fadeInSubtitle {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .shape {
@@ -73,63 +78,98 @@
 
 .enter-btn {
   display: inline-block;
-  margin: 2rem auto 0 auto;
-  padding: 12px 28px;
+  margin-top: 2rem;
+  padding: 12px 30px;
   border-radius: 30px;
-  border: 2px solid #60b7cb;
-  color: #60b7cb;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+  border: 2px solid rgba(255,255,255,0.7);
+
+  color: #fff;
   text-decoration: none;
-  transition: 
-    background 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
+  letter-spacing: 2px;
+
+  transition: all 0.4s ease;
+  backdrop-filter: blur(4px);
+  background: rgba(255,255,255,0.08);
+
+  animation: fadeInButton 3.4s ease-out forwards;
+  opacity: 0;
 }
 
 .enter-btn:hover {
-  background: #60b7cb;
-  color: #0a0a0a;
-  box-shadow: 0 0 12px rgba(96, 183, 203, 0.5);
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
   transform: translateY(-3px);
 }
 
-.gradient-orbs {
+.fantasy-nebula {
   position: absolute;
   inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(96, 183, 203, 0.5), transparent 70%),
+              radial-gradient(circle at 70% 70%, rgba(220, 180, 255, 0.4), transparent 60%),
+              radial-gradient(circle at 50% 100%, rgba(255, 240, 210, 0.4), transparent 70%);
+  filter: blur(80px);
+  animation: nebulaShift 20s ease-in-out infinite alternate;
   z-index: 0;
-  overflow: hidden;
+  opacity: 0.8;
 }
 
-.gradient-orbs::before,
-.gradient-orbs::after {
+@keyframes nebulaShift {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-30px) scale(1.1); }
+}
+
+.rune-ring {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('media/rune-ring.png'); /* I can generate one if you need */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  animation: rotateRune 40s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotateRune {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.particles::before,
+.particles::after {
   content: "";
   position: absolute;
-  width: 60vmax;
-  height: 60vmax;
+  width: 3px;
+  height: 3px;
+  background: white;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.55;
-  animation: float-blobs 18s infinite alternate ease-in-out;
+  opacity: 0.7;
+  animation: drift 12s infinite linear;
+  filter: blur(1px);
 }
 
-.gradient-orbs::before {
-  background: #60b7cb;
-  top: -10%;
-  left: -20%;
+.particles::after {
+  top: 80%;
+  left: 60%;
+  animation-duration: 18s;
 }
 
-.gradient-orbs::after {
-  background: #e7d9c8;
-  bottom: -10%;
-  right: -15%;
+@keyframes drift {
+  from { transform: translateY(0) translateX(0); }
+  to { transform: translateY(-200px) translateX(40px); }
 }
 
-@keyframes float-blobs {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(30px, -40px) scale(1.15); }
-}
+
 
 
 
