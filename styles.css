@@ -96,50 +96,6 @@
   100% { transform: translateY(-40px) scale(1.07); }
 }
 
-.rune-ring {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-image: url('media/druidic-ring.png'); /* I can generate this */
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.22;
-  animation: runeSpin 50s linear infinite;
-  z-index: 1;
-}
-
-@keyframes runeSpin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-.leaves {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.leaf {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background-image: url('media/leaf.png'); /* I can generate a silhouette leaf */
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-  animation: leafFloat 12s linear infinite;
-}
-
-@keyframes leafFloat {
-  from { transform: translateY(0) rotate(0deg); }
-  to { transform: translateY(-300px) rotate(180deg); }
-}
-
 .particles {
   position: absolute;
   inset: 0;
