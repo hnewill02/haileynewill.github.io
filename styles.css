@@ -21,7 +21,7 @@
 .cover-content {
   text-align: center;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 .big-title {
@@ -69,6 +69,7 @@
   animation: fadeInButton 3.4s ease-out forwards;
   opacity: 0;
   box-shadow: 0 0 12px rgba(96,183,203,0.25);
+  z-index: 11;
 }
 
 .enter-btn:hover {
