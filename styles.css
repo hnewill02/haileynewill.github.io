@@ -221,26 +221,22 @@ header {
 nav ul {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1.5rem;
   margin: 0;
 }
 
 nav a {
-  color: var(--cream);
+  color: #f7f6f2;
   text-decoration: none;
-  letter-spacing: 1px;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: var(--teal);
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
+    color: #60b7cb;
 }
 
 nav a.active {
-  color: var(--teal);
+  color: #60b7cb;
   position: relative;
   text-decoration: none;
 }
@@ -258,11 +254,9 @@ nav a.active::after {
 }
 
 .nav-container {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  max-width:1200px;
-  margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
