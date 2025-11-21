@@ -329,10 +329,15 @@ nav a.active::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  
+}
+
+nav {
+  padding: 18px 50px;
 }
 
 .logo {
-  height: 30px;
+  height: 40px;
   width: auto;
   display: block;
 }
