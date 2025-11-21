@@ -214,7 +214,6 @@ body {
 
 header {
   background: var(--black);
-  padding: 20px 36px;
   position: relative;
   z-index: 200;
 }
