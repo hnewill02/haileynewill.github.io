@@ -14,8 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top, #f7f6f2, #000000);
-  color: #2e6f7d;
+  background: radial-gradient(circle at top, #2e6f7d, #000000);
+  color: #f7f6f2;
 }
 
 .cover-content {
@@ -29,8 +29,8 @@
   font-size: 4.6rem;
   color: #f9f7f3;
   text-shadow:
-    0 0 10px #60b7cb,
-    0 0 25px #dcd2b4;
+    0 0 10px rgba(96,183,203,0.4),
+    0 0 25px rgba(220,210,180,0.25);
   animation: fadeInTitle 2.5s ease-out forwards;
   opacity: 0;
 }
@@ -42,10 +42,10 @@
 
 .tagline {
   font-size: 1.4rem;
-  color: #ffffff;
+  color: rgba(255,255,255,0.85);
   letter-spacing: 4px;
   opacity: 0;
-  text-shadow: 0 0 10px #60b7cb;
+  text-shadow: 0 0 10px rgba(96,183,203,0.35);
   animation: fadeInSubtitle 3s ease-out forwards;
 }
 
@@ -59,23 +59,23 @@
   margin-top: 2rem;
   padding: 14px 35px;
   border-radius: 40px;
-  border: 2px solid #60b7cb;
+  border: 2px solid rgba(96,183,203,0.5);
   color: #ffffff;
   text-decoration: none;
   letter-spacing: 2px;
-  background: #ffffff;
+  background: rgba(255,255,255,0.06);
   backdrop-filter: blur(4px);
   transition: all 0.4s ease;
   animation: fadeInButton 3.4s ease-out forwards;
   opacity: 0;
-  box-shadow: 0 0 12px #60b7cb;
+  box-shadow: 0 0 12px rgba(96,183,203,0.25);
   z-index: 11;
 }
 
 .enter-btn:hover {
-  background: #60b7cb;
-  box-shadow: 0 0 25px #60b7cb,
-              0 0 8px #fff5e6;
+  background: rgba(96,183,203,0.2);
+  box-shadow: 0 0 25px rgba(96,183,203,0.5),
+              0 0 8px rgba(255,245,230,0.4);
   transform: translateY(-4px);
 }
 
@@ -88,9 +88,9 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 40%, #60b7cb, transparent 70%),
-    radial-gradient(circle at 80% 70%, #dcd2b4, transparent 70%),
-    radial-gradient(circle at 50% 100%, #fff5e6, transparent 80%);
+    radial-gradient(circle at 20% 40%, rgba(96,183,203,0.55), transparent 70%),
+    radial-gradient(circle at 80% 70%, rgba(220,210,180,0.35), transparent 70%),
+    radial-gradient(circle at 50% 100%, rgba(255,245,230,0.35), transparent 80%);
   filter: blur(100px);
   animation: fogMove 18s ease-in-out infinite alternate;
   z-index: 0;
@@ -123,7 +123,7 @@
 .particles::before {
   background-image: radial-gradient(
     circle,
-    #ffffff 0px,
+    rgba(255, 255, 255, 0.7) 0px,
     rgba(255, 255, 255, 0) 8px
   );
   background-size: 150px 150px;
@@ -134,9 +134,9 @@
 
 .particles::after {
   background-image:
-    radial-gradient(circle, #ccb068 0px, #ccb068 12px),
-    radial-gradient(circle, #e6dfcd 0px, #e6dfcd 10px),
-    radial-gradient(circle, #f7f6f2 0px, #f7f6f2 14px);
+    radial-gradient(circle, rgba(96, 183, 203, 0.8) 0px, rgba(96, 183, 203, 0) 12px),
+    radial-gradient(circle, rgba(230, 223, 205, 0.7) 0px, rgba(230, 223, 205, 0) 10px),
+    radial-gradient(circle, rgba(150, 200, 180, 0.7) 0px, rgba(150, 200, 180, 0) 14px);
   background-size: 200px 200px, 250px 250px, 300px 300px;
   filter: blur(2px);
   opacity: 0.35;
@@ -169,7 +169,7 @@
   width: 22px;
   height: 22px;
 
-  background: radial-gradient(circle at 30% 30%, #385b4f, #60cb8e 70%);
+  background: radial-gradient(circle at 30% 30%, #092d16, #60cb8e 70%);
   border-radius: 40% 60% 40% 60%;
   box-shadow: 0 0 8px #1c5c43;
 
