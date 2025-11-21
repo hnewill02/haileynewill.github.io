@@ -234,7 +234,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--gold);
+  color: var(--teal);
   text-decoration: none;
   padding: 6px 8px;
   border-radius: 6px;
@@ -242,7 +242,7 @@ nav a:hover {
 }
 
 nav a.active {
-  color: var(--gold);
+  color: var(--teal);
   position: relative;
   text-decoration: none;
 }
