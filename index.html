@@ -37,8 +37,8 @@
   <section class="cover">
     <div class="fantasy-nebula"></div>
     <div class="rune-ring"></div>
-    <div class="leaves"></div>
     <div class="particles"></div>
+    <div class="leaves"></div>
 
     <div class="cover-content">
       <h1 class="big-title">HAILEY NEWILL</h1>
@@ -58,6 +58,22 @@
   <footer>
     <p>&copy; 2025 Hailey Newill. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.querySelector(".leaves");
+      for (let i = 0; i < 12; i++) {
+        const leaf = document.createElement("div");
+        leaf.classList.add("leaf");
+        leaf.style.left = Math.random() * 100 + "%";
+        leaf.style.animationDelay = Math.random() * 10 + "s";
+        leaf.style.opacity = 0.3 + Math.random() * 0.4;
+        leaf.style.transform = `scale(${0.6 + Math.random() * 0.8})`;
+        container.appendChild(leaf);
+      }
+    });
+  </script>
+    
 </body>
   
 </html>
