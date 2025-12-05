@@ -558,6 +558,8 @@ footer {
 .modal {
   display: none; 
   position: fixed;
+  justify-content: center;
+  align-items: center;
   z-index: 1000;
   left: 0;
   top: 0;
@@ -577,8 +579,7 @@ footer {
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
   width: 80%;
   max-width: 900px;
-  height: 70%;
-  max-height: 900px;
+  max-height: 85vh;
   overflow-y: auto;
 }
 
