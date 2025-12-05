@@ -220,21 +220,23 @@
   margin: 40px auto;
 }
 
-carousel-track {
+.carousel-track {
   display: flex;
   gap: 40px;
-  animation: scroll 25s linear infinite;
+  animation: scroll 35s linear infinite;
 }
 
 .carousel-track img {
-  height: 180px;
+  height: 200px;
   width: auto;
-  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Half-length for loop illusion */
+  from {transform: translateX(0);}
+  to {transform: translateX(-50%);}
 }
 
 .gallery-btn {
