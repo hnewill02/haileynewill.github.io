@@ -561,8 +561,8 @@ footer {
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
   width: 80%;
   max-width: 900px;
-  height: 80vh;
-  max-height: 700px;
+  height: 70%;
+  max-height: 900px;
   overflow-y: auto;
 }
 
