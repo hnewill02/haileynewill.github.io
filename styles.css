@@ -169,20 +169,20 @@
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  z-index: 20;
+  z-index: 999;
 }
 
 .leaf {
   position: absolute;
   top: -6vh;
-  width: 20px;
-  height: 26px;
-  background: linear-gradient(145deg, rgba(168,240,198,0.95) 0%, rgba(46,111,125,0.9) 70%);
+  width: 34px;
+  height: 44px;
+  background: linear-gradient(145deg, rgba(204,255,214,1) 0%, rgba(46,111,125,1) 70%);
   border-radius: 30% 60% 30% 60% / 40% 50% 60% 30%;
   box-shadow: 0 6px 18px rgba(46,111,125,0.16);
   animation: leafFall linear infinite, leafSpin 3.5s ease-in-out infinite;
-  opacity: 0.85;
-  filter: drop-shadow(0 2px 6px rgba(46,111,125,0.12));
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 6px rgba(46,111,125,0.2));
 }
 
 @keyframes leafFall {
@@ -271,6 +271,36 @@
 }
 
 
+.portfolio-page {
+  background: linear-gradient(180deg, #f7f6f2 0%, #f1ecdb 100%);
+  padding: 80px 40px;
+  min-height: 100vh;
+}  
+
+.project-card {
+  background: rgba(255,255,255,0.6);
+  border: 2px solid #ccb068;
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 16px rgba(46,111,125,0.15);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 26px rgba(46,111,125,0.35);
+}
+
+.section-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.8rem;
+  text-align: center;
+  color: var(--forest);
+  text-shadow: 0 0 8px rgba(96,183,203,0.25);
+  margin-bottom: 50px;
+}
 
 
 
