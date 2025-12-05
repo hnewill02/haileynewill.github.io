@@ -214,40 +214,27 @@
 }
 
 .carousel-container {
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
+  width: 100%;
   overflow: hidden;
-  border-radius: 20px;
-  border: 2px solid #ccb068; /* gold frame */
-  box-shadow: 0 0 30px rgba(46, 111, 125, 0.2);
+  position: relative;
+  margin: 40px auto;
 }
 
-.carousel-track {
+carousel-track {
   display: flex;
-  width: calc(100% * 4); /* number of images */
-  animation: slide 20s infinite linear;
+  gap: 40px;
+  animation: scroll 25s linear infinite;
 }
 
 .carousel-track img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  pointer-events: none;
-  user-select: none;
+  height: 180px;
+  width: auto;
+  object-fit: contain;
 }
 
-/* Auto-slide keyframes */
-@keyframes slide {
-  0% { transform: translateX(0%); }
-  20% { transform: translateX(0%); }
-  25% { transform: translateX(-100%); }
-  45% { transform: translateX(-100%); }
-  50% { transform: translateX(-200%); }
-  70% { transform: translateX(-200%); }
-  75% { transform: translateX(-300%); }
-  95% { transform: translateX(-300%); }
-  100% { transform: translateX(0%); }
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Half-length for loop illusion */
 }
 
 .gallery-btn {
