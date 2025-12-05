@@ -272,34 +272,79 @@
 
 
 .portfolio-page {
-  background: linear-gradient(180deg, #f7f6f2 0%, #f1ecdb 100%);
-  padding: 80px 40px;
+  background: linear-gradient(180deg, #f7f6f2 0%, #efe9d8 100%);
   min-height: 100vh;
-}  
+  position: relative;
+  overflow-x: hidden;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 40% 20%, rgba(204,176,104,0.18), transparent),
+              radial-gradient(circle at 80% 70%, rgba(46,111,125,0.12), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page-hero {
+  text-align: center;
+  padding: 140px 20px 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 3.2rem;
+  color: #385b4f;
+  text-shadow: 0 0 10px rgba(46,111,125,0.2);
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #2e6f7d;
+  margin-top: 10px;
+}
+
+.projects.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 40px 60px 100px;
+  position: relative;
+  z-index: 2;
+}
 
 .project-card {
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
   border: 2px solid #ccb068;
   border-radius: 18px;
-  padding: 28px;
-  margin-bottom: 40px;
-  box-shadow: 0 0 16px rgba(46,111,125,0.15);
-  backdrop-filter: blur(6px);
+  padding: 30px;
+  box-shadow: 0 0 18px rgba(46,111,125,0.15);
+  backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   box-shadow: 0 0 26px rgba(46,111,125,0.35);
 }
 
-.section-title {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 2.8rem;
-  text-align: center;
-  color: var(--forest);
-  text-shadow: 0 0 8px rgba(96,183,203,0.25);
-  margin-bottom: 50px;
+.cta-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: #385b4f;
+  color: #f7f6f2;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.cta-btn:hover {
+  background: #2e6f7d;
+  transform: translateY(-3px);
 }
 
 
