@@ -540,7 +540,7 @@ footer {
 
 /* Modal overlay */
 .modal {
-  display: none; /* Hidden by default */
+  display: none; 
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -554,13 +554,16 @@ footer {
 
 /* Modal content box */
 .modal-content {
-  background-color: #f7f6f2;
-  margin: 5% auto;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 700px;
+  background: #f7f6f2;
+  border-radius: 14px;
+  padding: 20px;
   position: relative;
-  color: #333;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  width: 80%;
+  max-width: 900px;
+  height: 80vh;
+  max-height: 700px;
+  overflow-y: auto;
 }
 
 /* Close button */
