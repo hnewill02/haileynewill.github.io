@@ -70,22 +70,21 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".leaves");
 
-  for (let i = 0; i < 12; i++) {
-    const leaf = document.createElement("div");
-    leaf.classList.add("leaf");
-    leaf.style.left = Math.random() * 100 + "%";
-    leaf.style.animationDelay = Math.random() * 10 + "s";
-    leaf.style.opacity = 0.3 + Math.random() * 0.4;
-    leaf.style.transform = `scale(${0.6 + Math.random() * 0.8})`;
-    container.appendChild(leaf);
-  }
+      const container = document.querySelector(".leaves");
+      for (let i = 0; i < 12; i++) {
+        const leaf = document.createElement("div");
+        leaf.classList.add("leaf");
+        leaf.style.left = Math.random() * 100 + "%";
+        leaf.style.animationDelay = Math.random() * 10 + "s";
+        leaf.style.opacity = 0.3 + Math.random() * 0.4;
+        leaf.style.transform = `scale(${0.6 + Math.random() * 0.8})`;
+        container.appendChild(leaf);
+      }
 
-  const track = document.querySelector(".carousel-track");
-  track.innerHTML += track.innerHTML;
-});
-    
+      const track = document.querySelector(".carousel-track");
+      track.innerHTML += track.innerHTML;
+    });
   </script>
     
 </body>
